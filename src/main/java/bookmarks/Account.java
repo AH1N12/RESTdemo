@@ -15,7 +15,8 @@ public class Account {
     @OneToMany(mappedBy = "account")
     private Set<Bookmark> bookmarks = new HashSet<>();
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
 
     @JsonIgnore
@@ -38,11 +39,11 @@ public class Account {
         return username;
     }
 
-    public Account(String password, String username) {
+    public Account( String username,String password) {
         this.password = password;
         this.username = username;
     }
 
-    public Account() {
+    Account() {
     }
 }
